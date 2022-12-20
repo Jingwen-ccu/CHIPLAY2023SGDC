@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CHI PLAY 2023 SGDC 企劃書</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e3bf7562-495d-4177-8d0b-13281f77984d" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1598439590252-17bc9690a47e?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb" style="object-position:center 52.57000000000001%"/><h1 class="page-title">CHI PLAY 2023 SGDC 企劃書</h1></header><div class="page-body"><p id="12c28b2c-61fb-4cc5-94be-d57405deb2da" class="">
+</p><h1 id="81e8ca38-60fd-46d1-8035-0d0c60742de8" class="">目錄</h1><nav id="939f9425-1fe5-4099-8076-cd7b0d823a02" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#81e8ca38-60fd-46d1-8035-0d0c60742de8">目錄</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01b35eab-3187-41ba-82b7-d2a590d02fa6">零、專案資訊</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f410d6a7-686b-4891-9014-f33bf77b8a05">一、遊戲軟體需求</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dcddb50d-41ad-4452-859a-15d4200634cf">二、遊戲玩法</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#90b06df2-e6de-436e-a878-39ccf927d331">三、遊戲目標</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#801cd4ef-d76d-4e35-bd38-4d021f6df79a">四、遊戲效益</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#86017870-adbb-4e1a-8675-8acd439d53c5">五、遊戲核心</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7534ef35-56cb-4b86-a71e-b02d7d6dadfd">六、遊戲劇情背景</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#67d8c11d-099f-4d4d-b7fc-660bc24165fc">七、遊戲美術</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a8bcbd8c-a491-4e34-98b7-06dfbbb36f3c">八、遊戲流程</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6e21eba0-ee19-4c4a-8ab4-6d62b0eb0441">九、遊戲機制</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#90f7e63e-17f9-407a-ae5d-bb1a50760706">SDGs 觸發機關機制</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#327fff23-c116-46d6-92c1-4b6a4caafc65">遊戲交叉比對機制</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d9e479c9-6884-4258-b692-c36fb00ae984">遊戲後台統計機制</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#36af0227-49f9-4b73-bbfb-b7bfe2e2fabc">十、遊戲驗證</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4d9588b9-4d5b-41e6-a193-49002bc733ca">附件：SDGs機關觸發總覽</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c282efa9-164f-4ea2-80b7-bf19fe7f9739">洗漱用水量 (<strong><strong>SDG6｜節約用水</strong></strong>)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7cc3e1e0-c60b-4840-b251-d64367955b40">隨手關燈 (<strong><strong>SDG7｜使用潔淨能源</strong></strong>)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4477488d-9adf-4637-92e3-deef579da8dd">勞工權益 (<strong><strong>SDG16｜促進和平)</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4184bf7f-e196-49b5-a1b4-2f1ebeac8335">黑心企業 (<strong><strong>SDG2｜追求更好的飲食</strong></strong>)</a></div></nav><h1 id="01b35eab-3187-41ba-82b7-d2a590d02fa6" class="">零、專案資訊</h1><ul id="444a0cc1-040a-4586-826e-783826ceb085" class="bulleted-list"><li style="list-style-type:disc">遊戲企劃兼製作人：黃靖文</li></ul><ul id="0b2078d7-70bd-4cc8-ab8a-d9acb0991d05" class="bulleted-list"><li style="list-style-type:disc">遊戲指導老師：程芙茵</li></ul><ul id="5b0ae6e4-7bfe-46c3-ac60-5506ad3a0774" class="bulleted-list"><li style="list-style-type:disc">遊戲程式與美術設計師：黃靖文</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="47e15ac3-5eff-4cd9-b081-9007ac329381"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">企劃啟蒙資料來源：<a href="https://futurecity.cw.com.tw/article/1883?rec=i2i&amp;from_id=1867&amp;from_index=2">https://futurecity.cw.com.tw/article/1883?rec=i2i&amp;from_id=1867&amp;from_index=2</a></div></figure><h1 id="f410d6a7-686b-4891-9014-f33bf77b8a05" class="">一、遊戲軟體需求</h1><ul id="5831d71f-88ee-492f-b99f-753eb52a1bd6" class="bulleted-list"><li style="list-style-type:disc">遊戲類型：VR劇情遊戲</li></ul><ul id="dca33770-872c-4d7e-a518-d145dfc2e43e" class="bulleted-list"><li style="list-style-type:disc">遊戲平台：Windows系統 PC平台</li></ul><ul id="9f21d394-813d-43c3-9687-a7437ec95e83" class="bulleted-list"><li style="list-style-type:disc">遊玩人數：1人</li></ul><ul id="e05c0039-f202-4512-a5a2-7ba0ce83549d" class="bulleted-list"><li style="list-style-type:disc">遊戲受眾：12+</li></ul><h1 id="dcddb50d-41ad-4452-859a-15d4200634cf" class="">二、遊戲玩法</h1><ul id="0d998747-ed2c-4d2e-b0bd-502c27b42a3b" class="bulleted-list"><li style="list-style-type:disc">此作品契合「SDGs聯合國17項永續發展目標」，玩家將完整的在遊戲中過完兩天，透過日常發現生活中大大小小易被忽視的SDGs議題。</li></ul><ul id="fdb2664e-e749-46e7-afbd-43584a8163f9" class="bulleted-list"><li style="list-style-type:disc">也就是說，遊戲讓你模擬一天的日常，但會透過遊戲的機制提醒你一些你平常根本不會注意到但卻很重要的議題，讓玩家了解到說SDGs離我們生活中到底有多近。</li></ul><ul id="e2c05e53-715e-4694-9a3a-28eb1445d287" class="bulleted-list"><li style="list-style-type:disc">遊戲中的第二天將會與第一天相似，不同的是，遊戲中的第二天玩家已具備充足的SDGs知識，將會運用第一天所學，改善第二天的行為。</li></ul><figure id="74ce4f93-c5ed-4a02-8a71-4e13a2ce8787" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled.png"><img style="width:1400px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled.png"/></a><figcaption>概念示意圖，來源：還願遊戲實機畫面</figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a86f3bd-c027-4eb4-bc0a-4f7c8e1ca807"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">舉例來說：<ul id="9666e5a8-ce58-4c93-a62b-a6afd0005371" class="bulleted-list"><li style="list-style-type:disc">從早上洗臉刷牙，部份的人可能不會用杯子，而是直接用手去接水，這可能會導致一些水資源的浪費，而遊戲中會實際的幫您統計你浪費的水量，並在你刷完牙後提示你，讓你了解到你平常不會注意到的問題。(<strong><strong>SDG6｜節約用水</strong></strong>)</li></ul><ul id="1b4a22f8-33dc-4c2e-a5bf-63a4b859361f" class="bulleted-list"><li style="list-style-type:disc">如果你從遊戲中的租屋處出門，但你沒有將電燈關閉，遊戲會實際的幫您統計這會導致多少能源的浪費，以及你電費帳單的損失，並在你出門沒多久後提示你。(<strong><strong>SDG7｜使用潔淨能源</strong></strong>)</li></ul><ul id="726d9ffc-2a7e-4093-b6be-942e84a8eaae" class="bulleted-list"><li style="list-style-type:disc">又或者在遊戲中要上班時，老闆可能會做出種種不合理的行為，這時遊戲可能也會提醒你這違背有哪些法律可以保障你的權益。(<strong><strong>SDG16｜促進和平)</strong></strong></li></ul><ul id="5dedf8c8-0455-48c8-96a2-93fb488a4f61" class="bulleted-list"><li style="list-style-type:disc">下班時可能會去超商採買物品，其中幾樣商品可能製造企業是有問題的，結帳後，遊戲會提醒你關於這企業的一些訊息，而企業的醜聞訊息其實早上起床後的手機新聞訊息已經跳出了，只是你沒發現而已。(<strong><strong>SDG2｜追求更好的飲食</strong></strong>)</li></ul></div></figure><h1 id="90b06df2-e6de-436e-a878-39ccf927d331" class="">三、遊戲目標</h1><ol type="1" id="140aa190-aa32-4e04-8341-d8abed75a7f7" class="numbered-list" start="1"><li>能夠<strong>提升玩家對於SDGs的理解</strong>。</li></ol><h1 id="801cd4ef-d76d-4e35-bd38-4d021f6df79a" class="">四、遊戲效益</h1><p id="d763952d-6ede-48bc-a1c9-fd5717332ec9" class="">1-1.  能夠<strong>改變玩家於日常生活中的行為</strong>，藉此協助解決SDGs的問題。</p><p id="236552a5-1c99-45ba-b6a4-72e3a029ddd5" class="">1-2.  能夠<strong>以最簡單的方式介紹SDGs核心內容</strong>，不需要複雜的文字，只需要推薦此款作品即可。</p><h1 id="86017870-adbb-4e1a-8675-8acd439d53c5" class="">五、遊戲核心</h1><ol type="1" id="498473f4-c6eb-4f4f-8043-a1ebdfd29d18" class="numbered-list" start="1"><li>淺顯易懂的資訊<ul id="58a74b14-44ce-438b-ae1d-905ea8df5bd9" class="bulleted-list"><li style="list-style-type:disc">複雜的文字玩家容易跳過。</li></ul><ul id="599ddee1-afdc-4884-ba8c-e38d0b54bce3" class="bulleted-list"><li style="list-style-type:disc">利用圖像清楚表達想傳達的SDGs訊息概念。</li></ul><figure id="418709d9-b522-4e6c-88f6-1113767f804b" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%201.png"><img style="width:1279px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%201.png"/></a><figcaption>概念示意圖，來源：<a href="https://mepopedia.com/forum/read.php?37,90234">https://mepopedia.com/forum/read.php?37,90234</a></figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4cf97441-bc19-4213-a2f9-29d4065af123"><div style="font-size:1.5em"><span class="icon">🏷️</span></div><div style="width:100%">如何透過圖像設計讓使用者願意甚至渴望看完整份提示訊息？</div></figure></li></ol><ol type="1" id="d50a1d94-229b-45d4-87ca-5120983bd1e1" class="numbered-list" start="2"><li>隨時隨處都有亮點<ul id="2d298725-9cb6-480b-bfb8-ddbb5add6ad2" class="bulleted-list"><li style="list-style-type:disc">利用遊戲中劇情或場景元素設計的亮點，讓玩家在遊玩中有驚喜感，而不至於疲乏。</li></ul></li></ol><ol type="1" id="718b70f8-4295-4fde-a3ad-efef82e4da07" class="numbered-list" start="3"><li>台灣式的建築設計<ul id="0e68324f-e4b1-4454-a617-7c08fcfeec48" class="bulleted-list"><li style="list-style-type:disc">主要遊玩受眾是台灣玩家，因此為了讓玩家能夠更好融入於世界中，會將遊戲場景設計成台灣人熟悉的場景。</li></ul><figure id="ec02fe33-6a75-4d0c-9a5a-ac4904f64d3b" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%202.png"><img style="width:1200px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%202.png"/></a><figcaption>概念示意圖，來源：<a href="https://news.ebc.net.tw/news/house/297587">https://news.ebc.net.tw/news/house/297587</a></figcaption></figure><figure id="a20973c5-0936-4883-be94-b1c0e32f4941" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%203.png"><img style="width:600px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%203.png"/></a><figcaption>概念示意圖，來源：還願遊戲實機畫面</figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dcf98a15-2949-4f5f-bc74-d6d9f719525b"><div style="font-size:1.5em"><span class="icon">🏷️</span></div><div style="width:100%">台灣場景元素有哪些？資源從何而來？</div></figure></li></ol><h1 id="7534ef35-56cb-4b86-a71e-b02d7d6dadfd" class="">六、遊戲劇情背景</h1><ul id="9e107e41-e15e-4174-b9aa-3645ee18b3a2" class="bulleted-list"><li style="list-style-type:disc">主角性別設定為女生，名叫林怡君。</li></ul><ul id="812d9bb8-f51d-42a7-a3af-5debd0b535fd" class="bulleted-list"><li style="list-style-type:disc">母胎單身。</li></ul><ul id="1503962f-97a4-4358-85c1-e7436559941e" class="bulleted-list"><li style="list-style-type:disc">是一名24歲的職場新人，任職於外商公司。</li></ul><h1 id="67d8c11d-099f-4d4d-b7fc-660bc24165fc" class="">七、遊戲美術</h1><ul id="01471d06-18fc-4ed8-a98d-94e5351c5146" class="bulleted-list"><li style="list-style-type:disc">重點在於寫實，不傾向卡通風格，上方兩張是理想的場景，下方兩張比較不理想，太卡通了。</li></ul><div id="fd7409b3-6a42-4dc6-a255-e0da02502529" class="column-list"><div id="1979d17c-f1bc-406b-9334-ccdf85428b4b" style="width:50%" class="column"><figure id="5271dfdb-9561-48d3-97d2-f006d441a313" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%204.png"><img style="width:1920px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%204.png"/></a><figcaption>概念示意圖，來源：<a href="https://i.pinimg.com/originals/af/32/84/af328424466f49d5ef7df3f006d308b6.jpg">https://i.pinimg.com/originals/af/32/84/af328424466f49d5ef7df3f006d308b6.jpg</a></figcaption></figure></div><div id="2406d1d9-a58b-4853-afa6-5cbd018f77af" style="width:50%" class="column"><figure id="54fe3a6a-a5a8-4ed4-a1f6-53d951c2ab13" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%205.png"><img style="width:736px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%205.png"/></a><figcaption>概念示意圖，來源：<a href="https://i.pinimg.com/736x/f1/c4/5e/f1c45e2767d3b2dac52452aca708d979.jpg">https://i.pinimg.com/736x/f1/c4/5e/f1c45e2767d3b2dac52452aca708d979.jpg</a></figcaption></figure></div></div><div id="8c019d29-5c43-42ba-8edd-4e0d5689d54d" class="column-list"><div id="0f878461-6d96-4b4d-8185-2566857a1e0d" style="width:50%" class="column"><figure id="6ea9a1be-91be-45a0-acca-b3205177cf14" class="image" style="text-align:left"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%206.png"><img style="width:651px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%206.png"/></a><figcaption>概念示意圖，來源：<a href="https://img.ttshow.tw/images/media/uploads/2019/07/09/77.jpg">https://img.ttshow.tw/images/media/uploads/2019/07/09/77.jpg</a></figcaption></figure></div><div id="fc0d5a22-1ddc-45c6-8320-6b2479d14699" style="width:50%" class="column"><figure id="f9f13bc1-22a3-485b-844b-e72540583f7f" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%207.png"><img style="width:787px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%207.png"/></a><figcaption>概念示意圖，來源：<a href="https://img.ttshow.tw/images/media/uploads/2019/07/09/55.jpg">https://img.ttshow.tw/images/media/uploads/2019/07/09/55.jpg</a></figcaption></figure></div></div><h1 id="a8bcbd8c-a491-4e34-98b7-06dfbbb36f3c" class="">八、遊戲流程</h1><ul id="aae63811-44ed-4789-8ac5-a0b4b1a0a641" class="bulleted-list"><li style="list-style-type:disc">遊戲場景將依序從 “家” → “大街 (早餐店)” → ”公司” → “大街 (便利商店)” → “家”。</li></ul><ul id="1d0321de-c4a2-4664-b982-be6549417a42" class="bulleted-list"><li style="list-style-type:disc">遊戲時間將從白天到晚上。</li></ul><h1 id="6e21eba0-ee19-4c4a-8ab4-6d62b0eb0441" class="">九、遊戲機制</h1><h3 id="90f7e63e-17f9-407a-ae5d-bb1a50760706" class="">SDGs 觸發機關機制</h3><ul id="64b3d922-1062-4566-9d20-d31abf5cdcd0" class="bulleted-list"><li style="list-style-type:disc">當角色的行為觸發到特定SDGs的內容時，將會出現以下訊息：<ol type="1" id="d01510e3-01ce-4b63-9911-8298c4a9e492" class="numbered-list" start="1"><li>對應的SDGs項目</li></ol><ol type="1" id="7b5acc7f-3e85-46ab-8b16-ffa34f3c1041" class="numbered-list" start="2"><li>需改善行為敘述</li></ol><ol type="1" id="98965180-0dc7-4d01-8681-eba9708bbfbb" class="numbered-list" start="3"><li>需改善行為影響</li></ol><ol type="1" id="8650616b-9bba-443d-bc60-c5d35357e894" class="numbered-list" start="4"><li>與其他人相比的數據</li></ol></li></ul><h3 id="327fff23-c116-46d6-92c1-4b6a4caafc65" class="">遊戲交叉比對機制</h3><ul id="43068157-dbbe-4c32-8909-26a810e99292" class="bulleted-list"><li style="list-style-type:disc">遊戲中經歷完兩天後，遊戲將會交叉比對這兩天的行為有什麼不一樣，改善率有多少？</li></ul><h3 id="d9e479c9-6884-4258-b692-c36fb00ae984" class="">遊戲後台統計機制</h3><ul id="b30d09d4-b148-4c55-83b8-871e5aaea95e" class="bulleted-list"><li style="list-style-type:disc">所有遊玩的玩家其遊戲數據將會傳送到後台統計處理，於遊戲進行中時，將會隨時調閱後台統計供玩家檢視自己與其他人的行為差異。</li></ul><figure id="98461dee-d6d6-4f79-87ea-85469c168f64" class="image"><a href="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%208.png"><img style="width:1920px" src="CHI%20PLAY%202023%20SGDC%20%E4%BC%81%E5%8A%83%E6%9B%B8%20e3bf7562495d41778d0b13281f77984d/Untitled%208.png"/></a><figcaption>概念示意圖，來源：<em>The Walking Dead </em>遊戲實機畫面</figcaption></figure><h1 id="36af0227-49f9-4b73-bbfb-b7bfe2e2fabc" class="">十、遊戲驗證</h1><ul id="ad8f7d3a-c089-4762-ae4a-7af5a5f91e50" class="bulleted-list"><li style="list-style-type:disc">遊戲完成時會舉行公開測試活動：<ol type="1" id="1534e440-43db-4545-b0c9-344dfa64eae7" class="numbered-list" start="1"><li>遊戲前測<ul id="1ebf9d8f-8845-4810-90af-5f46b2589309" class="bulleted-list"><li style="list-style-type:disc">測試對於 SDGs 議題的了解程度。</li></ul></li></ol><ol type="1" id="4179f6ec-dc9b-481a-938e-7f28389a00a3" class="numbered-list" start="2"><li>實際遊戲<ul id="8b97cb66-31bf-45ee-b567-9902cd9b6a5c" class="bulleted-list"><li style="list-style-type:disc">實際全程遊玩遊戲。</li></ul></li></ol><ol type="1" id="8c6c6d17-c92c-4704-b41f-1c85222eb2ad" class="numbered-list" start="3"><li>遊戲後測<ul id="140875ea-fad4-41f9-9d6a-abf2b5312ea6" class="bulleted-list"><li style="list-style-type:disc">測試對於 SDGs 議題的了解程度。</li></ul></li></ol><ol type="1" id="1dfce5f2-7830-40f5-8d80-0f13bbe72dde" class="numbered-list" start="4"><li>遊戲回饋<ul id="86fe686c-dc8c-44e2-8b9e-6780d4a7db35" class="bulleted-list"><li style="list-style-type:disc">對於遊戲給予回饋、改進建議。</li></ul></li></ol></li></ul><h1 id="4d9588b9-4d5b-41e6-a193-49002bc733ca" class="">附件：SDGs機關觸發總覽</h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="82367433-a0e5-4bd8-a85e-af4aa481f1e2"><div style="font-size:1.5em"><span class="icon">🚧</span></div><div style="width:100%">持續擴充項目！</div></figure><blockquote id="1a9f5268-7fc5-4169-bb92-bdc61461d07a" class="">以下依照遊戲線程先後順序排序：</blockquote><h3 id="c282efa9-164f-4ea2-80b7-bf19fe7f9739" class="">洗漱用水量 (<strong><strong>SDG6｜節約用水</strong></strong>)</h3><ul id="e415a375-bb0c-4c8a-849e-25be8decb8fc" class="bulleted-list"><li style="list-style-type:disc">從早上洗臉刷牙，部份的人可能不會用杯子，而是直接用手去接水，這可能會導致一些水資源的浪費，而遊戲中會實際的幫您統計你浪費的水量，並在你刷完牙後提示你，讓你了解到你平常不會注意到的問題。</li></ul><h3 id="7cc3e1e0-c60b-4840-b251-d64367955b40" class="">隨手關燈 (<strong><strong>SDG7｜使用潔淨能源</strong></strong>)</h3><ul id="af34be65-2095-483d-ae10-4870047bde93" class="bulleted-list"><li style="list-style-type:disc">如果你從遊戲中的租屋處出門，但你沒有將電燈關閉，遊戲會實際的幫您統計這會導致多少能源的浪費，以及你電費帳單的損失，並在你出門沒多久後提示你。</li></ul><h3 id="4477488d-9adf-4637-92e3-deef579da8dd" class="">勞工權益 (<strong><strong>SDG16｜促進和平)</strong></strong></h3><ul id="7cf6ec8e-4c2a-4c95-881b-e7aef004180e" class="bulleted-list"><li style="list-style-type:disc">於上班時，老闆可能會做出種種不合理的行為，這時遊戲可能也會提醒你這違背有哪些法律可以保障你的權益。</li></ul><h3 id="4184bf7f-e196-49b5-a1b4-2f1ebeac8335" class="">黑心企業 (<strong><strong>SDG2｜追求更好的飲食</strong></strong>)</h3><ul id="46ea1b2c-5558-4ea7-bedc-5e0410a03733" class="bulleted-list"><li style="list-style-type:disc">下班時可能會去超商採買物品，其中幾樣商品可能製造企業是有問題的，結帳後，遊戲會提醒你關於這企業的一些訊息，而企業的醜聞訊息其實早上起床後的手機新聞訊息已經跳出了，只是你沒發現而已。</li></ul><p id="07dbebae-f3f3-418e-bd31-22491d6a16f4" class="">
+</p></div></article></body></html>
